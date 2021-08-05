@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.GeckoDriverInfo;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -12,9 +14,11 @@ public class OpenGoogle {
 
     WebDriver wd;
     WebDriverWait wait;
-    @BeforeMethod
 
+    @BeforeMethod
     public void setUp() {
+     //   System.setProperty("webdriver.gecko.driver", "/home/ksu/QA_Tools/geckodriver");
+     //   wd = new FirefoxDriver();
         wd = new ChromeDriver();
         wait = new WebDriverWait(wd, 20);
         wd.manage().window().maximize();
